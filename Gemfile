@@ -72,3 +72,5 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'omniauth-google-oauth2'
 
 gem 'jquery-rails'
+
+gem 'cancancan'

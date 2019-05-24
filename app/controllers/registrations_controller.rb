@@ -10,7 +10,7 @@ class RegistrationsController < ApplicationController
 		if @user.save
 			session[:current_user_id] = @user.id
 			flash[:notice] = "Registration correct"
-			redirect_to root_url
+			redirect_to users_path
 
 		else
 
