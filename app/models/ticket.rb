@@ -14,5 +14,4 @@ class Ticket < ApplicationRecord
       errors.add(:base, "Can't sell a ticket for a past event")
     end
   end
-
 end
