@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+<!--
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -27,13 +27,16 @@
             js.src = "https://connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script>-->
   </head>
 
   <body>
   	<p id="notice"><%= notice %></p>
-    <%= link_to 'Sign In', registrations_url %>
-    <%= link_to 'Log In', root_url %>
+    <%= link_to 'Sign In', registrations_path %>
+    <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+
+
+    <%= link_to 'Log In', :controller => :sessions, :action => :create %>
     <%= link_to 'Log Out', log_out_url %>
     <%= yield %>
 

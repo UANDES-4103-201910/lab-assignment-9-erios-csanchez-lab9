@@ -1,12 +1,14 @@
 class RegistrationsController < ApplicationController
+
 	def new
 	
 	end
 
 	def create
 	    #complete this method
-		user = User.new(registrations_params)
-		if user.save
+		@user = User.new(registrations_params)
+		if @user.save
+			session[:current_user_id] = @user.id
 			flash[:notice] = "Registration correct"
 			redirect_to root_url
 
@@ -17,6 +19,6 @@ class RegistrationsController < ApplicationController
 		end
 	end
 	def registrations_params
-		params.require(:registration).permit(:name, :last_name, :email, :password, :phone)
+		params.require(:registrations).permit(:name, :last_name, :email, :password, :phone)
 	end
 end

@@ -18,8 +18,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-
+  config.mailer_sender = 'mailer@example.com'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -171,7 +170,11 @@ Devise.setup do |config|
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  #
+  #
+  # acaaaaaaaaaaaaa
+  #
+  #config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
@@ -297,7 +300,9 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
   #
-  config.mailer_sender = 'ernestor96@gmail.com'
-  config.omniauth :facebook, "2349224975362024", "553304649e94d41132a9ddb636555faa"
+
+  #config.omniauth :facebook, "2349224975362024", "553304649e94d41132a9ddb636555faa"
+  #
+  config.omniauth :google_oauth2, '449888339101-fsa138sbhfmr2v0t89faa0e522einkv9.apps.googleusercontent.com', 'uRWq-WDTkl73qQdNF37czq0b', {}
 
 end
