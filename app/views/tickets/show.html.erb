@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
+<% if can? :read, @ticket %>
+  <p>
+    <strong>Description:</strong>
+    <%= @ticket.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @ticket.description %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= @ticket.price %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @ticket.price %>
-</p>
+  <p>
+    <strong>Event:</strong>
+    <%= @ticket.event %>
+  </p>
 
-<p>
-  <strong>Event:</strong>
-  <%= @ticket.event %>
-</p>
+  <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+  <%= link_to 'Back', tickets_path %>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+<% else %>
+  <%= render root_path %>
+<%end %>

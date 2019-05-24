@@ -6,12 +6,12 @@ class Ability
   def initialize(user)
     can :read, :all
     if user.present?
-      can :create,  Ticket, user_id: user.id
+      can :manage,  Ticket, user_id: user.id
 
       if user.admin?
         can :manage, :all
-        can :create, Event
-        can :create, Ticket, user_id: user.id
+        can :manage, Event
+        can :manage, Ticket
       end
     end
 

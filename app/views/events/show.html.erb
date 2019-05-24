@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
+<% if can? :read, @event %>
+  <p>
+    <strong>Name:</strong>
+    <%= @event.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @event.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+  <p>
+    <strong>Start date:</strong>
+    <%= @event.start_date %>
+  </p>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
+  <p>
+    <strong>Place:</strong>
+    <%= @event.place %>
+  </p>
 
-<p>
-  <strong>Place:</strong>
-  <%= @event.place %>
-</p>
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<% else %>
+  <%= render root_path %>
+<%end %>

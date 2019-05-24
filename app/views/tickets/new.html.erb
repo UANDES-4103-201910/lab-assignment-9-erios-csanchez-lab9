@@ -1,5 +1,8 @@
 <h1>New Ticket</h1>
+<% if can? :manage, @ticket %>
+  <%= render 'form', ticket: @ticket %>
 
-<%= render 'form', ticket: @ticket %>
-
-<%= link_to 'Back', tickets_path %>
+  <%= link_to 'Back', tickets_path %>
+<% else %>
+  <%= render root_path %>
+<%end %>

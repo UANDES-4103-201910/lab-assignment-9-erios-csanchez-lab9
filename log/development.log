@@ -10343,3 +10343,93 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 65ms (Views: 60.4ms | ActiveRecord: 0.3ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /Users/catalina/Desktop/lab-assignment-9-erios-csanchez-lab9/app/models/application_record.rb:1)
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-23 23:43:52 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-23 23:43:53 -0400
+Started GET "/users/auth/google_oauth2/callback?state=a4383a75b1b3e3cc437251647d71d165b666553ae4bbde4b&code=4/VAE973xkkUYqKRDn2oy_ZzLVelBp-BBSYKitgEASNmYyaa1DGf4CqwKAKZOdp9qifMmmDpfHhAQtCIO7rrXgRWg&scope=email%20profile%20https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email" for ::1 at 2019-05-23 23:44:01 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"a4383a75b1b3e3cc437251647d71d165b666553ae4bbde4b", "code"=>"4/VAE973xkkUYqKRDn2oy_ZzLVelBp-BBSYKitgEASNmYyaa1DGf4CqwKAKZOdp9qifMmmDpfHhAQtCIO7rrXgRWg", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100056260458770381558"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cbsanchez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cbsanchez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "provider", "uid") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "CATALINA BELEN SANCHEZ CORTES"], ["email", "cbsanchez@miuandes.cl"], ["created_at", "2019-05-24 03:44:03.437385"], ["updated_at", "2019-05-24 03:44:03.437385"], ["encrypted_password", "$2a$11$mPSTrwm0Lt2vrfTV9RZBD.AQT4JkrLoq5hFYfOm2P3z0Csma.sop6"], ["provider", "google_oauth2"], ["uid", "100056260458770381558"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 393ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-23 23:44:03 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (163.6ms)
+Completed 200 OK in 1165ms (Views: 1051.6ms | ActiveRecord: 0.2ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /Users/catalina/Desktop/lab-assignment-9-erios-csanchez-lab9/app/models/application_record.rb:1)
+Started GET "/" for ::1 at 2019-05-23 23:51:39 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 498ms (Views: 444.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-23 23:51:42 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-23 23:51:42 -0400
+Started GET "/users/auth/google_oauth2/callback?state=ec8ee54c018266dceb6a1ea5225ed7d581e7d609463b3791&code=4/VAFKkTpx941aTyAMsec4sdbUkN0XKoXTfejBsSlXDht7_uAOKAbH_iZN2z9eQBzuzVwuuZOj9ZL-h_wSN3M3rsA&scope=email%20profile%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-23 23:51:48 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"ec8ee54c018266dceb6a1ea5225ed7d581e7d609463b3791", "code"=>"4/VAFKkTpx941aTyAMsec4sdbUkN0XKoXTfejBsSlXDht7_uAOKAbH_iZN2z9eQBzuzVwuuZOj9ZL-h_wSN3M3rsA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100056260458770381558"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-23 23:51:49 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 74ms (Views: 69.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2019-05-23 23:51:53 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 161ms (Views: 115.5ms | ActiveRecord: 0.5ms)
+
+
