@@ -32,13 +32,21 @@
 
   <body>
   	<p id="notice"><%= notice %></p>
-    <%= link_to 'Sign In', registrations_path %>
+
+    <%= link_to 'Log Out', :log_out %>
+
+    <%= yield %>
+    <br>
     <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
 
 
-    <%= link_to 'Log In', root_url %>
-    <%= link_to 'Log Out', log_out_url %>
-    <%= yield %>
+
+
+
+
+
+
+
 
 
   </body>

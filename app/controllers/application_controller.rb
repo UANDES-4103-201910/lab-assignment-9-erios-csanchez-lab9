@@ -1,17 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  #layout proc { google_logged_in ? "google_logged_in" : "application" }
-  before_action :authenticate_user!
+  before_action :current_user
 
   def index
 
   end
 
   def current_user
-	#complete this method
-   # @_current_user ||= session[:current_user_id] &&
-    #    User.find_by(id: session[:current_user_id])
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if session[:user_id]
+      @current_user ||= User.find(session[:user_id])
+    else
+      @current_user = nil
+    end
   end
 
   def is_user_logged_in?
@@ -23,7 +23,5 @@ class ApplicationController < ActionController::Base
 	  if logged_in then true else redirect_to root_path end
   end
 
-  #def google_logged_in
-  #  if session["warden.user.user.key"] then true else false end
-  #end
+
 end

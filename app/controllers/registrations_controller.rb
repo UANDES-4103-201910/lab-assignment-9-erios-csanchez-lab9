@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
 	    #complete this method
 		@user = User.new(registrations_params)
 		if @user.save
-			session[:current_user_id] = @user.id
+			session[:user_id] = @user.id
 			flash[:notice] = "Registration correct"
 			redirect_to users_path
 
