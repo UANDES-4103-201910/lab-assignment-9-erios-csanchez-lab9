@@ -33,11 +33,16 @@
   <body>
   	<p id="notice"><%= notice %></p>
 
-    <%= link_to 'Log Out', :log_out %>
+    <% if current_user %>
+      <%= current_user.email %>
+      <%= link_to 'Log Out', :log_out %>
+    <% else %>
+      <%= yield %>
+      <br>
+      <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+    <% end %>
 
-    <%= yield %>
-    <br>
-    <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+
 
 
 
